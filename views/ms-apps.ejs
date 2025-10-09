@@ -1,0 +1,61 @@
+<%- include('partials/header') %>
+
+<%- include('partials/navbar') %>
+
+<main class="container p-5">
+  <div class="row">
+    <div class="col-md-10 offset-md-1">
+      <p class="text-center">Online link generator for Microsoft Store. <br>
+        Enter the link from the Microsoft Store and click on the checkbox - to get all available links.</p>
+      <form id="generateApp">
+        <div class="input-group">
+          <select class="form-select" id="type" name="type" aria-label="Type">
+            <option value="url" selected>URL (link)</option>
+            <option value="ProductId">Product Id</option>
+            <option value="PackageFamilyName">Package Family Name</option>
+            <option value="CategoryId">Category Id</option>
+          </select>
+          <input type="text" name="url" id="url" class="form-control" placeholder="Example: https://www.microsoft.com/store/productId/9NSWSBXN8K03" title="Example: https://www.microsoft.com/store/productId/9NSWSBXN8K03" autocomplete="off">
+          <select class="form-select" id="ring" name="ring" aria-label="Ring">
+            <option value="WIF">Windows Insider Fast</option>
+            <option value="WIS">Windows Insider Slow</option>
+            <option value="RP">Release Preview</option>
+            <option value="Retail" selected>Default OS</option>
+          </select>
+          <button class="btn btn-outline-success generate-btn" type="submit" title="Generate temporary links" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Generate temporary links">Generate</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="mt-4 col-md-12 d-none" id="resultInfo">
+      <div class="table-responsive">
+        <table class="table table-hover table-bordered table-sm">
+          <thead class="table-light">
+            <tr class="text-center">
+              <th scope="col">File</th>
+              <th scope="col">Expired</th>
+              <th scope="col">SHA-1</th>
+              <th scope="col">Size</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/jquery-3.7.1.min.js"></script>
+<script src="js/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
+<script src="js/toast.js"></script>
+<script src="js/ms-apps.js"></script>
+<script>
+  const generateBtn = $(".generate-btn");
+  new bootstrap.Tooltip(generateBtn);
+</script>
+
+<%- include('partials/footer') %>

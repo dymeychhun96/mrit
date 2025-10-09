@@ -1,47 +1,44 @@
 <%- include('partials/header') %>
 
-<div class="container bg-white">
+<%- include('partials/navbar') %>
 
-  <%- include('partials/navbar') %>
-
-  <main class="p-3">
-    <form id="winrarForm">
-      <div class="form-row mb-3">
-        <div class="col-md-6">
-          <label for="registerName" class="form-label fw-bold">
-            <span class="border border-end border-3 border-success me-2"></span>
-            Register Name
-          </label>
-          <input name="registerName" id="registerName" class="form-control" autocomplete="off" />
-        </div>
+<main class="container p-5">
+  <form id="winrarForm">
+    <div class="form-row mb-3">
+      <div class="col-md-6">
+        <label for="registerName" class="form-label fw-bold">
+          <span class="border border-end border-3 border-success me-2"></span>
+          Register Name
+        </label>
+        <input name="registerName" id="registerName" class="form-control" autocomplete="off" />
       </div>
-      <div class="form-row mb-3">
-        <div class="col-md-6">
-          <label for="licenseType" class="form-label fw-bold">
-            <span class="border border-end border-3 border-success me-2"></span>
-            License Type
-          </label>
-          <select name="licenseType" id="licenseType" class="form-control">
-            <option value="" selected>-- Select --</option>
-            <option value="Single PC usage license">
-              Single PC usage license
-            </option>
-            <option value="Local Site License">Local Site License</option>
-            <option value="Unlimited Company License">
-              Unlimited Company License
-            </option>
-            <option value="1000 PC usage license">
-              1000 PC usage license
-            </option>
-          </select>
-        </div>
+    </div>
+    <div class="form-row mb-3">
+      <div class="col-md-6">
+        <label for="licenseType" class="form-label fw-bold">
+          <span class="border border-end border-3 border-success me-2"></span>
+          License Type
+        </label>
+        <select name="licenseType" id="licenseType" class="form-control">
+          <option value="" selected>-- Select --</option>
+          <option value="Single PC usage license">
+            Single PC usage license
+          </option>
+          <option value="Local Site License">Local Site License</option>
+          <option value="Unlimited Company License">
+            Unlimited Company License
+          </option>
+          <option value="1000 PC usage license">
+            1000 PC usage license
+          </option>
+        </select>
       </div>
-      <button type="submit" class="btn btn-success" id="generateBtn">
-        Generate
-      </button>
-    </form>
-  </main>
-</div>
+    </div>
+    <button type="submit" class="btn btn-success" id="generateBtn">
+      Generate
+    </button>
+  </form>
+</main>
 <script src="js/bootstrap.bundle.min.js"></script>
 <script src="js/jquery-3.7.1.min.js"></script>
 <script src="js/jquery.validate.min.js"></script>
