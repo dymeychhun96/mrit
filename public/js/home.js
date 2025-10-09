@@ -14,7 +14,6 @@ $(function () {
   let htmlContent = "";
   if (contentMap.length > 0) {
     contentMap.forEach((item) => {
-      console.log(item);
       htmlContent += `
     <div class="col p-3">
         <div class="card h-100 shadow-sm">
@@ -29,4 +28,16 @@ $(function () {
 
     $("#rowCard").html(htmlContent);
   }
+
+  $(document).on(
+    {
+      mouseenter: function () {
+        $(this).removeClass("shadow-sm").addClass("shadow");
+      },
+      mouseleave: function () {
+        $(this).removeClass("shadow").addClass("shadow-sm");
+      },
+    },
+    ".card"
+  );
 });
