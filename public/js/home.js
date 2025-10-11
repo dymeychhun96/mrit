@@ -2,22 +2,22 @@ $(function () {
   const contentMap = [
     {
       title: "Winrar KeyGen",
-      url: `${location.origin}/winrar-keygen`,
+      url: `/winrar-keygen`,
       icon: "fa-solid fa-file-zipper",
     },
     {
       title: "Microsoft Key Checker",
-      url: `${location.origin}/ms-key-check`,
+      url: `/ms-key-check`,
       icon: "fa-brands fa-microsoft",
     },
     {
-      title: "Microsoft Store online link generator",
-      url: `${location.origin}/ms-store-gen`,
+      title: "Microsoft Store Apps",
+      url: `/ms-store-gen`,
       icon: "fa-brands fa-microsoft",
     },
     {
-      title: "Steam Manifest & Lua generator",
-      url: `${location.origin}/steam-manifest`,
+      title: "Steam Manifest & Lua",
+      url: `/steam-manifest`,
       icon: "fa-brands fa-steam",
     },
   ];
@@ -31,7 +31,9 @@ $(function () {
         <div class="card-body">
             <div class="card-title"><i class="${item.icon} fa-xl"></i> ${item.title}</div>
             <p class="card-text"></p>
-            <a href="${item.url}" class="btn btn-success" target="_blank">Open</a>
+        </div>
+        <div class="card-footer">
+         <a href="${location.origin}${item.url}" class="btn btn-success btn-sm" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Open</a>
         </div>
         </div>
     </div>`;

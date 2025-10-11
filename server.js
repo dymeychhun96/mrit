@@ -35,7 +35,7 @@ app.get("/winrar-keygen", (req, res) => {
 
 app.get("/ms-store-gen", (req, res) => {
   res.render("ms-apps", {
-    title: "Microsoft Store Generator",
+    title: "Microsoft Store App Link Generator",
   });
 });
 
