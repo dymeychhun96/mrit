@@ -1,0 +1,28 @@
+<%- include('partials/header') %>
+
+<%- include('partials/navbar') %>
+
+<main class="container p-5">
+  <div class="card">
+    <div class="card-body">
+      <p>Check and download game manifests by Steam AppID</p>
+      <form id="formManifestGenerate">
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="e.g. 1392860" aria-label="e.g. 1392860" aria-describedby="generateBtn" id="steamAppId" name="steamAppId" autocomplete="off">
+          <button class="btn btn-outline-success" type="submit" id="generateBtn">Generate Manifest</button>
+        </div>
+      </form>
+      <hr>
+      <div class="mt-3" id="gameInfo"></div>
+    </div>
+  </div>
+</main>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/jquery-3.7.1.min.js"></script>
+<script src="js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<script src="js/toast.js"></script>
+<script src="js/FileSaver.min.js"></script>
+<script src="js/manifest.js"></script>
+
+<%- include('partials/footer') %>

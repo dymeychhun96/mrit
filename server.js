@@ -6,7 +6,7 @@ const cors = require("cors");
 const axios = require("axios");
 const app = express();
 
-// const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
@@ -36,6 +36,12 @@ app.get("/winrar-keygen", (req, res) => {
 app.get("/ms-store-gen", (req, res) => {
   res.render("ms-apps", {
     title: "Microsoft Store Generator",
+  });
+});
+
+app.get("/steam-manifest", (req, res) => {
+  res.render("steam-manifest", {
+    title: "Steam Manifest & Lua Generator",
   });
 });
 
@@ -139,8 +145,79 @@ app.post("/ms-app-gen", async (req, res) => {
   }
 });
 
-// app.listen(port, () => {
-//   console.log(`server is running on: http://localhost:${port}`);
-// });
+app.post("/get-game-detail", async (req, res) => {
+  try {
+    let steamEnpoint = "https://store.steampowered.com";
+    const steamAppId = req.body.appids;
 
-module.exports = app;
+    if (!steamAppId) {
+      return res.status(400).json({
+        success: false,
+        error: "Steam app id is required.",
+      });
+    }
+
+    const response = await axios.get(
+      `${steamEnpoint}/api/appdetails?appids=${steamAppId}`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+
+    res.json({
+      success: true,
+      results: response.data,
+    });
+  } catch (error) {
+    console.error(`Error generating: ${error.message}`);
+
+    res.status(500).json({
+      success: false,
+      error: error.message || "Failed to generate",
+    });
+  }
+});
+
+app.post("/get-manifest", async (req, res) => {
+  try {
+    let manifestEnpoint = "https://steamtool.online";
+    const { appids } = req.body;
+
+    if (!appids) {
+      return res.status(400).json({
+        success: false,
+        error: "Steam app id is required.",
+      });
+    }
+
+    const response = await axios.get(
+      `${manifestEnpoint}/api/download-manifest?appid=${appids}`,
+      {
+        responseType: "arraybuffer",
+      }
+    );
+
+    res.setHeader("Content-Type", "application/zip");
+    res.setHeader(
+      "Content-Disposition",
+      `attachment; filename="${appids}.zip"`
+    );
+
+    res.send(response.data);
+  } catch (error) {
+    console.error(`Error generating: ${error.message}`);
+
+    res.status(500).json({
+      success: false,
+      error: error.message || "Failed to generate",
+    });
+  }
+});
+
+app.listen(port, () => {
+  console.log(`server is running on: http://localhost:${port}`);
+});
+
+// module.exports = app;

@@ -3,6 +3,10 @@ const toastBackgound = {
     color: "#fff!important;",
     background: "RGBA(var(--bs-success-rgb),var(--bs-bg-opacity,1))!important",
   },
+  info: {
+    color: "#fff!important;",
+    background: "RGBA(var(--bs-info-rgb),var(--bs-bg-opacity,1))!important",
+  },
 
   danger: {
     color: "#fff!important;",
