@@ -3,7 +3,7 @@ $(function () {
     {
       title: "Winrar KeyGen",
       url: `/winrar-keygen`,
-      icon: "fa-solid fa-file-zipper",
+      icon: "fa-regular fa-file-zipper",
     },
     {
       title: "Microsoft Key Checker",
@@ -19,6 +19,11 @@ $(function () {
       title: "Steam Manifest & Lua",
       url: `/steam-manifest`,
       icon: "fa-brands fa-steam",
+    },
+    {
+      title: "Monokai Pro KeyGen",
+      url: `/monokai-keygen`,
+      icon: "fa-regular fa-file-certificate",
     },
   ];
 

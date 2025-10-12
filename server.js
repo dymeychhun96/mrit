@@ -45,6 +45,12 @@ app.get("/steam-manifest", (req, res) => {
   });
 });
 
+app.get("/monokai-keygen", (req, res) => {
+  res.render("monokai-keygen", {
+    title: "Monokai Pro License Generator",
+  });
+});
+
 app.post("/check-key", async (req, res) => {
   try {
     const key = req.body.key;

@@ -1,0 +1,49 @@
+<%- include('partials/header') %>
+
+<%- include('partials/navbar') %>
+
+<main class="container p-5">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+        <input type="radio" class="btn-check" name="idetype" id="vscodeBtn" autocomplete="off" value="vscode" checked>
+        <label class="btn btn-outline-success" for="vscodeBtn">
+          <img src="img/visual-studio-48.png" alt="VS Code"> VSCode
+        </label>
+
+        <input type="radio" class="btn-check" name="idetype" id="sublimeTextBtn" autocomplete="off" value="sublime">
+        <label class="btn btn-outline-success" for="sublimeTextBtn">
+          <img src="img/sublime-text-48.png" alt="Sublime Text">
+          Sublime Text
+        </label>
+      </div>
+      <div class="input-group my-3">
+        <input type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="generateBtn" id="email" name="email">
+        <button class="btn btn-outline-success" type="button" id="generateBtn">
+          Generate
+        </button>
+      </div>
+      <div class="position-relative">
+        <textarea name="result" id="result" rows="5" class="form-control"></textarea>
+        <div class="position-absolute top-0 end-0 me-2 mt-2">
+          <div class="btn-group" role="group" aria-label="Group Button">
+            <button type="button" class="btn btn-secondary btn-sm copyBtn" data-clipboard-target="#result" title="Copy to clipboard"><i class="fa-regular fa-copy"></i></button>
+            <button type="button" class="btn btn-secondary btn-sm downloadBtn" title="Download"><i class="fa-regular fa-download"></i></button>
+          </div>
+        </div>
+      </div>
+      <div id="instruction" class="mt-3"></div>
+    </div>
+  </div>
+</main>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
+<script src="js/toast.js"></script>
+<script src="js/FileSaver.min.js"></script>
+<script src="js/md5.min.js"></script>
+<script src="js/clipboard.js"></script>
+<script src="js/monokai-keygen.js"></script>
+
+<%- include('partials/footer') %>
