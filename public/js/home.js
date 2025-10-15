@@ -32,13 +32,13 @@ $(function () {
     contentMap.forEach((item) => {
       htmlContent += `
     <div class="col p-3">
-        <div class="card h-100 shadow-sm">
+        <div class="card card-hover h-100">
         <div class="card-body">
             <div class="card-title"><i class="${item.icon} fa-xl"></i> ${item.title}</div>
             <p class="card-text"></p>
         </div>
         <div class="card-footer">
-         <a href="${location.origin}${item.url}" class="btn btn-success btn-sm" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Open</a>
+         <a href="${location.origin}${item.url}" class="btn btn-success btn-sm" target="_blank"><i class="fa-regular fa-arrow-up-right-from-square"></i> Open</a>
         </div>
         </div>
     </div>`;
@@ -47,15 +47,15 @@ $(function () {
     $("#rowCard").html(htmlContent);
   }
 
-  $(document).on(
-    {
-      mouseenter: function () {
-        $(this).removeClass("shadow-sm").addClass("shadow");
-      },
-      mouseleave: function () {
-        $(this).removeClass("shadow").addClass("shadow-sm");
-      },
-    },
-    ".card"
-  );
+  // $(document).on(
+  //   {
+  //     mouseenter: function () {
+  //       $(this).removeClass("shadow-sm").addClass("shadow");
+  //     },
+  //     mouseleave: function () {
+  //       $(this).removeClass("shadow").addClass("shadow-sm");
+  //     },
+  //   },
+  //   ".card"
+  // );
 });

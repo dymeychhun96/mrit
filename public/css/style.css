@@ -1,0 +1,9 @@
+.card-hover {
+  box-shadow: var(--bs-box-shadow-sm) !important;
+  transition: box-shadow 0.2s linear, transform 0.2s linear;
+}
+
+.card-hover:hover {
+  box-shadow: var(--bs-box-shadow) !important;
+  transform: translateY(-5px);
+}

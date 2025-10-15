@@ -51,6 +51,12 @@ app.get("/monokai-keygen", (req, res) => {
   });
 });
 
+app.get("/svg-downloader", (req, res) => {
+  res.render("svg-downloader", {
+    title: "SVG Downloader",
+  });
+});
+
 app.post("/check-key", async (req, res) => {
   try {
     const key = req.body.key;
@@ -220,6 +226,12 @@ app.post("/get-manifest", async (req, res) => {
       error: error.message || "Failed to generate",
     });
   }
+});
+
+app.use((req, res) => {
+  res.status(404).render("404", {
+    title: "404 Not Found",
+  });
 });
 
 // app.listen(port, () => {
